@@ -1,10 +1,13 @@
 <template>
-    <StackLayout orientation="vertical" class="item" v-bind:class="{'valid': this.value.done}" @tap="goTodetails">
-        <Label :text="value.content"   />
+    <AbsoluteLayout class="item">
+        <StackLayout orientation="vertical" v-bind:class="{'valid': this.value.done}" @tap="goTodetails" class="arrierePlan">
+            <Label :text="value.content"/>
+        </StackLayout>
 
-        <Switch v-model="value.done" class="tttt"/>
 
-    </StackLayout>
+        <Switch v-model="value.done" class="premierPlan"/>
+    </AbsoluteLayout>
+
 </template>
 
 <script>
@@ -33,5 +36,14 @@
     }
     .valid{
         background-color: green;
+    }
+
+    .arrierePlan{
+        height: 100%;
+        width: 100%;
+    }
+    .premierPlan{
+        left:50;
+        top:50;
     }
 </style>
