@@ -6,6 +6,8 @@
 
 
         <Switch v-model="value.done" class="premierPlan"/>
+
+        <Button text="Supprimer" v-if="value.done" @tap="removeItem" />
     </AbsoluteLayout>
 
 </template>
@@ -19,6 +21,9 @@
         methods:{
             goTodetails(event) {
                 this.$navigateTo(Details_item, {props: {value: this.value,}})
+            },
+            removeItem(){
+                this.$bus.$emit('removeItem',this.value)
             }
         }
     }

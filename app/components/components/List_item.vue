@@ -31,6 +31,11 @@
                     {"content" : "troisieme", "done" : false}
                 ]
             }
+        },
+        created(){
+            this.$bus.$on('removeItem',(item) => {
+                this.items.splice(this.items.indexOf(item),1)
+            })
         }
     }
 </script>
