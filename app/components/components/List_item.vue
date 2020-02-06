@@ -8,27 +8,22 @@
 
 <script>
     import Item from "./Item";
+    import item_todo from "../models/item_todo";
     export default {
         name: "List_item",
         components: {Item},
         data: function(){
             return {
                 items: [
-                    {"content" : "premier", "done" : true},
-                    {"content" : "deuxieme", "done" : false},
-                    {"content" : "troisieme", "done" : false},
-                    {"content" : "premier", "done" : false},
-                    {"content" : "deuxieme", "done" : false},
-                    {"content" : "troisieme", "done" : false},
-                    {"content" : "premier", "done" : false},
-                    {"content" : "deuxieme", "done" : false},
-                    {"content" : "troisieme", "done" : false},
-                    {"content" : "premier", "done" : false},
-                    {"content" : "deuxieme", "done" : false},
-                    {"content" : "troisieme", "done" : false},
-                    {"content" : "premier", "done" : false},
-                    {"content" : "deuxieme", "done" : false},
-                    {"content" : "troisieme", "done" : false}
+                    new item_todo("premier", true),
+                    new item_todo("premier", false),
+                    new item_todo("premier", false),
+                    new item_todo("premier", false),
+                    new item_todo("premier", false),
+                    new item_todo("premier", false),
+                    new item_todo("premier", false),
+                    new item_todo("premier", false),
+                    new item_todo("premier", false),
                 ]
             }
         },
