@@ -5,7 +5,6 @@
                 <item v-for="(item, index) in items" :value="item"></item>
             </StackLayout>
         </ScrollView>
-        </list-view>
         <fab row="1" icon="" rippleColor="#f1f1f1" class="fab-button" @tap="addItem"></fab>
         <fab row="1" icon="" text="Tri" rippleColor="#f1f1f1" class="fab-button" @tap="addItem" style="margin-bottom: 100;"></fab>
 
