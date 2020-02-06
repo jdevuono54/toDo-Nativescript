@@ -1,12 +1,16 @@
 <template>
     <grid-layout rows="auto, *">
+        <SegmentedBar v-model="filtre" @selectedIndexChange="onSelectedIndexChange">
+            <SegmentedBarItem title="all" />
+            <SegmentedBarItem title="ok" />
+            <SegmentedBarItem title="pasok" />
+        </SegmentedBar>
         <ScrollView row="1">
             <StackLayout class="list_item" orientation="vertical">
                 <item v-for="(item, index) in items" :value="item"></item>
             </StackLayout>
         </ScrollView>
         <fab row="1" icon="" rippleColor="#f1f1f1" class="fab-button" @tap="addItem"></fab>
-        <fab row="1" icon="" text="Tri" rippleColor="#f1f1f1" class="fab-button" @tap="addItem" style="margin-bottom: 100;"></fab>
 
     </grid-layout>
 </template>
@@ -21,6 +25,7 @@
         components: {Item},
         data: function () {
             return {
+                filtre:null,
                 items: [
                     new item_todo("1", true),
                     new item_todo("2", false),
@@ -45,6 +50,9 @@
         methods:{
             addItem(){
                 this.$showModal(modal_addItem);
+            },
+            onSelectedIndexChange(){
+                console.log(this.filtre)
             }
         }
     }
@@ -64,7 +72,7 @@
         padding: 20;
 
         .item {
-            margin-top: 20;
+            margin-top: 10;
         }
     }
 </style>
