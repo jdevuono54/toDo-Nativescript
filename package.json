@@ -15,7 +15,8 @@
     "@nativescript/theme": "~2.2.1",
     "@nstudio/nativescript-floatingactionbutton": "^2.0.0",
     "nativescript-vue": "~2.4.0",
-    "tns-core-modules": "~6.3.0"
+    "tns-core-modules": "~6.3.0",
+    "vue-lodash": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "~7.1.0",
