@@ -1,18 +1,23 @@
 <template>
-    <ScrollView>
-        <StackLayout class="list_item" orientation="vertical">
-            <item v-for="(item, index) in items" :value="item"></item>
-        </StackLayout>
-    </ScrollView>
+    <grid-layout rows="auto, *">
+        <ScrollView row="1">
+            <StackLayout class="list_item" orientation="vertical">
+                <item v-for="(item, index) in items" :value="item"></item>
+            </StackLayout>
+        </ScrollView>
+        </list-view>
+        <fab row="1" icon="" rippleColor="#f1f1f1" class="fab-button" @tap="addItem"></fab>
+    </grid-layout>
 </template>
 
 <script>
     import Item from "./Item";
     import item_todo from "../models/item_todo";
+
     export default {
         name: "List_item",
         components: {Item},
-        data: function(){
+        data: function () {
             return {
                 items: [
                     new item_todo("1", true),
@@ -27,19 +32,33 @@
                 ]
             }
         },
-        created(){
-            this.$bus.$on('removeItem',(item) => {
-                this.items.splice(this.items.indexOf(item),1)
+        created() {
+            this.$bus.$on('removeItem', (item) => {
+                this.items.splice(this.items.indexOf(item), 1)
             })
+        },
+        methods:{
+            addItem(){
+                return null
+            }
         }
     }
 </script>
 
 <style scoped lang="scss">
-    .list_item{
+    .fab-button {
+        height: 70;
+        width: 70; /// this is required on iOS - Android does not require width so you might need to adjust styles
+        margin: 15;
+        background-color: #ff4081;
+        horizontal-align: right;
+        vertical-align: bottom;
+    }
+
+    .list_item {
         padding: 20;
 
-        .item{
+        .item {
             margin-top: 20;
         }
     }
