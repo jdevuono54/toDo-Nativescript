@@ -1,13 +1,13 @@
 <template>
     <AbsoluteLayout class="item">
-        <StackLayout orientation="vertical" v-bind:class="{'valid': this.value.done}" @tap="goTodetails" class="arrierePlan">
+        <StackLayout @tap="goTodetails" class="arrierePlan" orientation="vertical" v-bind:class="{'valid': this.value.done}">
             <Label :text="value.content"/>
         </StackLayout>
 
 
-        <Switch v-model="value.done" class="premierPlan"/>
+        <Switch class="premierPlan" v-model="value.done"/>
 
-        <Button text="Supprimer" v-if="value.done" @tap="removeItem" />
+        <Button @tap="removeItem" text="Supprimer" v-if="value.done" />
     </AbsoluteLayout>
 
 </template>
@@ -23,13 +23,16 @@
                 this.$navigateTo(Details_item, {props: {value: this.value,}})
             },
             removeItem(){
-                this.$bus.$emit('removeItem',this.value)
+                confirm('Confirm').then(result => {
+                    if(result ===true){
+                        this.$bus.$emit('removeItem',this.value)
+                    }});
             }
         }
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
     .item{
         border-radius: 10%;
         height: 200;

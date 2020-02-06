@@ -15,15 +15,15 @@
         data: function(){
             return {
                 items: [
-                    new item_todo("premier", true),
-                    new item_todo("premier", false),
-                    new item_todo("premier", false),
-                    new item_todo("premier", false),
-                    new item_todo("premier", false),
-                    new item_todo("premier", false),
-                    new item_todo("premier", false),
-                    new item_todo("premier", false),
-                    new item_todo("premier", false),
+                    new item_todo("1", true),
+                    new item_todo("2", false),
+                    new item_todo("3", false),
+                    new item_todo("4", false),
+                    new item_todo("5", false),
+                    new item_todo("6", false),
+                    new item_todo("7", false),
+                    new item_todo("8", false),
+                    new item_todo("9", false),
                 ]
             }
         },
