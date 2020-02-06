@@ -13,6 +13,7 @@
 <script>
     import Item from "./Item";
     import item_todo from "../models/item_todo";
+    import modal_addItem from "./modal_addItem";
 
     export default {
         name: "List_item",
@@ -36,10 +37,13 @@
             this.$bus.$on('removeItem', (item) => {
                 this.items.splice(this.items.indexOf(item), 1)
             })
+            this.$bus.$on('addItem', (item) => {
+                this.items.unshift(item)
+            })
         },
         methods:{
             addItem(){
-                return null
+                this.$showModal(modal_addItem);
             }
         }
     }
