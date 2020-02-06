@@ -7,6 +7,8 @@
         </ScrollView>
         </list-view>
         <fab row="1" icon="" rippleColor="#f1f1f1" class="fab-button" @tap="addItem"></fab>
+        <fab row="1" icon="" text="Tri" rippleColor="#f1f1f1" class="fab-button" @tap="addItem" style="margin-bottom: 100;"></fab>
+
     </grid-layout>
 </template>
 
@@ -50,15 +52,15 @@
 </script>
 
 <style scoped lang="scss">
-    .fab-button {
+    .fab-button{
         height: 70;
         width: 70; /// this is required on iOS - Android does not require width so you might need to adjust styles
         margin: 15;
-        background-color: #ff4081;
+        background-color: #0f83dd;
         horizontal-align: right;
         vertical-align: bottom;
+        color: white;
     }
-
     .list_item {
         padding: 20;
 
